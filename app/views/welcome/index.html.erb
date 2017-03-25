@@ -3,27 +3,27 @@
   <p>Explore, discover and catalog your favorite cheese + beer pairings</p>
 </div>
 <h4 class="text-center">Start with Cheese</h4>
-<div class="row search">
+<div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-success" type="button">Search</button>
+    <%= form_tag(cheeses_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Cheeses", :class => 'form-control centered'%>
+      <span class="form-actions">
+        <%= submit_tag "Search", :class => 'btn btn-success centered', :type => 'submit' %>
       </span>
-      <input type="text" class="form-control" placeholder="Enter Cheese Name">
-    </div>
+    <% end %>
   </div>
 </div>
 <br>
-<h4 class="text-center">Start with Beer</h4>
-<div class="row search">
+<h4 class="text-center">...Or start with Beer</h4>
+<div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-success" type="button">Search</button>
+    <%= form_tag(beers_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Beers", :class => 'form-control centered'%>
+      <span class="form-actions">
+        <%= submit_tag "Search", :class => 'btn btn-success centered', :type => 'submit' %>
       </span>
-      <input type="text" class="form-control" placeholder="Enter Beer Name">
-    </div>
+    <% end %>
   </div>
 </div>
 <br>
-<h4 class="text-center">Or, view the <%= link_to "Cheese" %> or <%= link_to "Beer" %> indexes</h4>
+<h4 class="text-center">Or, view the <%= link_to "Cheese", cheeses_path %> or <%= link_to "Beer", beers_path %> indexes</h4>

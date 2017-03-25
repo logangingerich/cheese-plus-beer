@@ -1,0 +1,6 @@
+<h3 class='page-header text-center'>Beers</h3>
+<div class="list-group text-center">
+  <% @beers.each do |beer| %>
+    <p class="list-group-item"><%= link_to beer.name, beer_path(beer.id) %></p>
+  <% end %>
+</div>

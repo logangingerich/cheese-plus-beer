@@ -1,3 +1,6 @@
 class Beer < ActiveRecord::Base
-  belongs_to :cheese
+  has_and_belongs_to_many :cheese
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+  end
 end
