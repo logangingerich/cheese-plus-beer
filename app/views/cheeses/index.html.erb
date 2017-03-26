@@ -1,6 +1,13 @@
 <h3 class='page-header text-center'>Cheeses</h3>
 <div class="list-group text-center">
-  <% @cheeses.each do |cheese| %>
-    <p class="list-group-item"><%= link_to cheese.name, cheese_path(cheese.id) %></p>
+  <% if (@cheeses.empty?) %>
+    <p>Sorry, no cheese matches found.</p>
+  <% else %>
+    <% @cheeses.each do |cheese| %>
+      <p class="list-group-item"><%= link_to cheese.name, cheese_path(cheese.id) %></p>
+    <% end %>
   <% end %>
+</div>
+<div class="text-center">
+  <%= link_to "Back To Search", :back, :class => "btn btn-success" %>
 </div>

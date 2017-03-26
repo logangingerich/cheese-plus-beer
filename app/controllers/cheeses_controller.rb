@@ -9,6 +9,7 @@ class CheesesController < ApplicationController
   end
 
   def show
+    @cheese = Cheese.find(params[:id])
   end
 
   def new

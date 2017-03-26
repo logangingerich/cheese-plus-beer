@@ -7,9 +7,9 @@
   <div class="col-sm-8 col-sm-offset-2">
     <%= form_tag(cheeses_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Cheeses", :class => 'form-control centered'%>
-      <span class="form-actions">
+      <div class="form-actions text-center">
         <%= submit_tag "Search", :class => 'btn btn-success centered', :type => 'submit' %>
-      </span>
+      </div>
     <% end %>
   </div>
 </div>
@@ -19,9 +19,9 @@
   <div class="col-sm-8 col-sm-offset-2">
     <%= form_tag(beers_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Beers", :class => 'form-control centered'%>
-      <span class="form-actions">
+      <div class="form-actions text-center">
         <%= submit_tag "Search", :class => 'btn btn-success centered', :type => 'submit' %>
-      </span>
+      </div>
     <% end %>
   </div>
 </div>
