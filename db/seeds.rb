@@ -82,6 +82,29 @@ Beer.create!(name:"Trappist")
 Beer.create!(name:"Marzen")
 Beer.create!(name:"Old Ale")
 
- puts "Seed finished"
- puts "#{Cheese.count} cheeses created!"
- puts "#{Beer.count} beers created!"
+
+Beer.all.each do |beer|
+  5.times do
+    p = beer.pairings.new(cheese: Cheese.all.sample)
+    p.save
+  end
+end
+
+Cheese.all.each do |cheese|
+  5.times do
+    p = cheese.pairings.new(beer: Beer.all.sample)
+    p.save
+  end
+end
+
+puts "Seed finished"
+puts "#{Cheese.count} cheeses created!"
+puts "#{Beer.count} beers created!"
+puts "#{Pairing.count} pairings created!"
+
+
+u = User.new
+u.email = 'example@example.com'
+u.password = 'password'
+u.password_confirmation = 'password'
+u.save

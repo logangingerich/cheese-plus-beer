@@ -1,3 +1,6 @@
 <div class="page-header text-center">
   <h1><%= @beer.name %></h1>
 </div>
+<% @beer.pairings.each do |pair| %>
+  <p class="text-center"><%= link_to pair.cheese.name, cheese_path(pair.cheese_id) %></p>
+<% end %>

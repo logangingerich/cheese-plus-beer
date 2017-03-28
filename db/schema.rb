@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324171426) do
+ActiveRecord::Schema.define(version: 20170327214849) do
 
   create_table "beers", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 20170324171426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "pairings", force: :cascade do |t|
+    t.integer  "cheese_id"
+    t.integer  "beer_id"
+    t.integer  "votes"
+    t.text     "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pairings", ["beer_id"], name: "index_pairings_on_beer_id"
+  add_index "pairings", ["cheese_id"], name: "index_pairings_on_cheese_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
