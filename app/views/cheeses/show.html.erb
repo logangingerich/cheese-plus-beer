@@ -1,6 +1,7 @@
-<div class="page-header text-center">
+<div class="jumbotron text-center">
   <h1><%= @cheese.name %></h1>
 </div>
+<h3 class="page-header text-center vertical-center">Beer Pairing Suggestions</h3>
 <% @cheese.pairings.each do |pair| %>
   <h4 class="text-center"><%= link_to pair.beer.name, beer_path(pair.beer_id) %></h4>
 <% end %>
