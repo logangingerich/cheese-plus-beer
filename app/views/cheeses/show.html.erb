@@ -2,5 +2,8 @@
   <h1><%= @cheese.name %></h1>
 </div>
 <% @cheese.pairings.each do |pair| %>
-  <p class="text-center"><%= link_to pair.beer.name, beer_path(pair.beer_id) %></p>
+  <h4 class="text-center"><%= link_to pair.beer.name, beer_path(pair.beer_id) %></h4>
 <% end %>
+<div class="text-center">
+  <%= link_to "Back To Search", root_path, :class => "btn btn-success" %>
+</div>
