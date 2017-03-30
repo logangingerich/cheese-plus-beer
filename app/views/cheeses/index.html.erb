@@ -1,10 +1,10 @@
-<h3 class='page-header text-center'>Cheeses</h3>
+<h2 class='page-header text-center'>Cheeses</h2>
 <div class="list-group text-center">
   <% if (@cheeses.empty?) %>
     <p>Sorry, no cheese matches found.</p>
   <% else %>
     <% @cheeses.each do |cheese| %>
-      <h4 class="list-group-item"><%= link_to cheese.name, cheese_path(cheese.id) %></h4>
+      <h4 class="list-group-item item"><%= link_to cheese.name, cheese_path(cheese.id) %></h4>
     <% end %>
   <% end %>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329174626) do
+ActiveRecord::Schema.define(version: 20170330161338) do
 
   create_table "beers", force: :cascade do |t|
     t.string   "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170329174626) do
     t.text     "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "rank"
   end
 
   add_index "pairings", ["beer_id"], name: "index_pairings_on_beer_id"
