@@ -2,7 +2,7 @@ class CheesesController < ApplicationController
   def index
     @cheeses = Cheese.all.order('name ASC')
     if params[:search]
-      @cheeses = Cheese.search(params[:search]).order("name ASC")
+      @cheeses = Cheese.search(params[:search]).order("name DESC")
     else
       @cheeses = Cheese.all.order("name ASC")
     end
@@ -10,7 +10,7 @@ class CheesesController < ApplicationController
 
   def show
     @cheese = Cheese.find(params[:id])
-    @pairings = @cheese.pairings.order('rank ASC')
+    @pairings = @cheese.pairings.order('rank DESC')
   end
 
   def new
