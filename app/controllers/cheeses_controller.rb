@@ -10,6 +10,7 @@ class CheesesController < ApplicationController
 
   def show
     @cheese = Cheese.find(params[:id])
+    @pairings = @cheese.pairings.order('rank DESC')
   end
 
   def new
