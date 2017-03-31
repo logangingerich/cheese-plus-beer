@@ -1,8 +1,9 @@
 class Pairing < ActiveRecord::Base
   belongs_to :cheese
   belongs_to :beer
-
   has_many :votes, dependent: :destroy
+
+  default_scope { order('rank DESC') }
 
   def up_votes
     votes.where(value: 1).count
