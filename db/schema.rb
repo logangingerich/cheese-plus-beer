@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20170330161338) do
     t.integer  "value"
     t.integer  "user_id"
     t.integer  "pairing_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "votes", ["pairing_id"], name: "index_votes_on_pairing_id"

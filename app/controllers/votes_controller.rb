@@ -1,27 +1,23 @@
 class VotesController < ApplicationController
   def up_vote
-    @pairing = Pairing.find(params[:pairing_id])
-    @vote = @pairing.votes.where(user_id: current_user.id).first
-
-    if @vote
-      @vote.update_attribute(:value, 1)
-    else
-      @vote = current_user.votes.create(value: 1, pairing: @pairing)
-    end
-
+    update_vote(1)
     redirect_to :back
   end
 
   def down_vote
+    update_vote(-1)
+    redirect_to :back
+  end
+
+  private
+  def update_vote(new_value)
     @pairing = Pairing.find(params[:pairing_id])
     @vote = @pairing.votes.where(user_id: current_user.id).first
 
     if @vote
-      @vote.update_attribute(:value, -1)
+      @vote.update_attribute(:value, new_value)
     else
-      @vote = current_user.votes.create(value: -1, pairing: @pairing)
+      @vote = current_user.votes.create(value: new_value, pairing: @pairing)
     end
-
-    redirect_to :back
   end
 end
