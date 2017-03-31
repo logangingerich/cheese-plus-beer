@@ -1,9 +1,9 @@
 <div class='text-center'>
-  <h4><%= link_to " ", pairing_down_vote_path(pair), class: 'glyphicon glyphicon-download', method: :post %>
-  <% if pair.points == 0 %>
+  <h4><%= link_to " ", pairing_down_vote_path(pairing), class: 'glyphicon glyphicon-download', method: :post %>
+  <% if pairing.points == 0 %>
     <em>No Votes</em>
   <% else %>
-    <strong><%= pair.points %></strong>
+    <strong><%= pairing.points %></strong>
   <% end %>
-  <%= link_to " ", pairing_up_vote_path(pair), class: 'glyphicon glyphicon-upload', method: :post %></h4>
+  <%= link_to " ", pairing_up_vote_path(pairing), class: 'glyphicon glyphicon-upload', method: :post %></h4>
 </div>

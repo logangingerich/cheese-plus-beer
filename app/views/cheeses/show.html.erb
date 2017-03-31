@@ -5,9 +5,14 @@
   <h3>Beer Pairing Suggestions</h3>
   <em>Remember to upvote the pairings you love, and downvote the ones you don't.</em>
 </div>
-<% @pairings.each do |pair| %>
-  <h3 class="text-center">+ <%= link_to pair.beer.name, beer_path(pair.beer_id) %></h3>
-<%= render partial: 'votes/voter', locals: { pair: pair } %>
+<% @pairings.each do |pairing| %>
+  <div class="list-group text-center">
+    <h3 class="list-group-item item">
+      + <%= link_to pairing.beer.name, beer_path(pairing.beer_id) %>
+      <%= render partial: 'votes/voter', locals: { pairing: pairing } %>
+      <%= render partial: 'likes/like', locals: { pairing: pairing } %>
+    </h3>
+  </div>
 <% end %>
 <div class="text-center">
   <%= link_to "Back To Search", root_path, :class => "btn btn-success" %>

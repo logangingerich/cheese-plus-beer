@@ -1,7 +1,9 @@
 class Pairing < ActiveRecord::Base
   belongs_to :cheese
   belongs_to :beer
+  belongs_to :user
   has_many :votes, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   default_scope { order('rank DESC') }
 

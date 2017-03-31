@@ -1,0 +1,11 @@
+<div>
+  <% if like = current_user.liked(pairing) %>
+    <%= link_to [pairing, like], class: 'btn btn-danger', method: :delete do %>
+      <i class="glyphicon glyphicon-star-empty"> </i>&nbsp; Unsave Pairing
+    <% end %>
+  <% else %>
+    <%= link_to [pairing, Like.new], class: 'btn btn-primary', method: :post do %>
+      <i class="glyphicon glyphicon-star"> </i>&nbsp; Save Pairing
+    <% end %>
+  <% end %>
+</div>

@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :votes, dependent: :destroy
+  has_many :pairings
+  has_many :likes, dependent: :destroy
+
+  def liked(pairing)
+    likes.where(pairing_id: pairing.id).first
+  end
 end
