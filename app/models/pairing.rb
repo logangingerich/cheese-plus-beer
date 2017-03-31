@@ -17,7 +17,7 @@ class Pairing < ActiveRecord::Base
   end
 
   def update_rank
-    new_rank = points
+    new_rank = points + 1
     update_attribute(:rank, new_rank)
   end
 end

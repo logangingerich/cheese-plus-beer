@@ -6,7 +6,7 @@
   <em>Remember to upvote the pairings you love, and downvote the ones you don't.</em>
 </div>
 <% @pairings.each do |pair| %>
-  <h4 class="text-center">+ <%= link_to pair.beer.name, beer_path(pair.beer_id) %></h4>
+  <h3 class="text-center">+ <%= link_to pair.beer.name, beer_path(pair.beer_id) %></h3>
 <%= render partial: 'votes/voter', locals: { pair: pair } %>
 <% end %>
 <div class="text-center">
