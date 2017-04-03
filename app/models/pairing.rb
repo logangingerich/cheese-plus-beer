@@ -5,8 +5,6 @@ class Pairing < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  default_scope { order('rank DESC') }
-
   def up_votes
     votes.where(value: 1).count
   end
