@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :pairings
+
+  get 'users/show'
+
   devise_for :users
   get 'welcome/index'
 
@@ -8,6 +12,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'likes/index'
+
+  get 'users/show'
 
   resources :cheeses
 
