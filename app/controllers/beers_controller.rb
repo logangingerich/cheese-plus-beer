@@ -10,7 +10,7 @@ class BeersController < ApplicationController
 
   def show
     @beer = Beer.find(params[:id])
-    @pairings = @beer.pairings.order(rank: :asc)
+    @pairings = @beer.pairings.order(rank: :desc)
   end
 
   def new
