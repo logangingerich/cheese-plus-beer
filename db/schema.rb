@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170331143230) do
   create_table "pairings", force: :cascade do |t|
     t.integer  "cheese_id"
     t.integer  "beer_id"
+    t.integer  "user_id"
     t.integer  "votes"
     t.text     "notes"
     t.datetime "created_at", null: false
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170331143230) do
 
   add_index "pairings", ["beer_id"], name: "index_pairings_on_beer_id"
   add_index "pairings", ["cheese_id"], name: "index_pairings_on_cheese_id"
+  add_index "pairings", ["user_id"], name: "index_pairings_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

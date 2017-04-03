@@ -4,12 +4,16 @@ RSpec.describe Pairing, type: :model do
   let(:cheese) { Cheese.create!(name: "Cheddar") }
   let(:beer) { Beer.create!(name: "Ale") }
   let(:pairing) { Pairing.create!(cheese: cheese, beer: beer) }
-  it { is_expected.to have_many(:votes) }
 
   describe "attributes" do
     it "has name attribute" do
       expect(pairing).to have_attributes(cheese: cheese, beer: beer)
     end
+    it { should have_many(:votes) }
+    it { should have_many(:likes) }
+    it { should belong_to(:cheese) }
+    it { should belong_to(:beer) }
+    it { should belong_to(:user) }
   end
 
   describe "voting" do

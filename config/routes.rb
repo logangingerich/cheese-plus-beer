@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get 'likes/index'
+
   resources :cheeses
 
   resources :beers
