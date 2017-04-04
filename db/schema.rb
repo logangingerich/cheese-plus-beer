@@ -11,21 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331143230) do
+ActiveRecord::Schema.define(version: 20170404153837) do
 
   create_table "beers", force: :cascade do |t|
     t.string   "name"
-    t.integer  "cheese_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "beers", ["cheese_id"], name: "index_beers_on_cheese_id"
 
   create_table "cheeses", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "custom_pairings", force: :cascade do |t|
+    t.string   "beer"
+    t.string   "cheese"
+    t.text     "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -42,7 +48,6 @@ ActiveRecord::Schema.define(version: 20170331143230) do
     t.integer  "cheese_id"
     t.integer  "beer_id"
     t.integer  "user_id"
-    t.integer  "votes"
     t.text     "notes"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

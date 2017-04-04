@@ -4,11 +4,8 @@ RSpec.describe UsersController, type: :controller do
   before :each do
      controller.class.skip_before_action :authenticate_user!
   end
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
-  end
+
+  let(:user) { User.create!(email: "user@bloccit.com", password: "password", password_confirmation: "password") }
+  let(:current_user) { user }
 
 end

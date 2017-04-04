@@ -1,9 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe PairingsController, type: :controller do
+RSpec.describe CustomPairingsController, type: :controller do
   before :each do
      controller.class.skip_before_action :authenticate_user!
   end
+
+  let(:custom_pairing) { CustomPairing.create!(cheese: "cheese", beer: "beer") }
 
   describe "GET #new" do
     it "returns http success" do

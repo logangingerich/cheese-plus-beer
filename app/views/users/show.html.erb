@@ -25,12 +25,34 @@
     </div>
   </div>
 <% end %>
+<% @custom_pairings.each do |pairing| %>
+  <div class="list-group text-center">
+    <div class="list-group-item item">
+      <h3><%= link_to pairing.cheese %> + <%= link_to pairing.beer%></h3><hr>
+      <% if pairing.notes == nil %>
+        <%= form_for [pairing] do |f| %>
+          <div class="form-group">
+            <%= f.text_field :notes, class: 'form-control', placeholder: "Add notes" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Save", class: 'btn btn-success' %>
+            <%= link_to "Delete Pairing", pairing, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this pairing?'} %>
+          </div>
+        <% end %>
+      <% else %>
+        <p class><%= pairing.notes %></p>
+        <%= link_to "Delete Pairing", pairing, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this pairing?'} %>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 <div class="page-header lead text-center">
   <em>Or, create your own custom pairing</em>
 </div>
 <div class="list-group text-center">
   <div class="list-group-item item">
-    <%= form_for @pairing do |f| %>
+    <%= form_for @custom_pairing do |f| %>
       <div class="form-group">
         <%= f.label :cheese %>
         <%= f.text_field :cheese, class: 'form-control', placeholder: "Enter cheese" %>

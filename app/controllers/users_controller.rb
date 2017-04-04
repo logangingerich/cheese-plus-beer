@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @liked_pairings = Like.where(user_id: current_user.id)
-    @pairing = Pairing.new
-    @pairing.user = current_user
+    @custom_pairings = CustomPairing.where(user_id: current_user.id)
+    @custom_pairing = CustomPairing.new
   end
 end

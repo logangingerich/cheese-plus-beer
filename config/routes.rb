@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :custom_pairings
   resources :pairings
 
   get 'users/show'

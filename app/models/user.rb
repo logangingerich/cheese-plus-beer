@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :pairings
   has_many :likes, dependent: :destroy
+  has_many :custom_pairings
 
   def liked(pairing)
     likes.where(pairing_id: pairing.id).first
