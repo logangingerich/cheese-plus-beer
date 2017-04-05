@@ -24,20 +24,10 @@ RSpec.describe CheesesController, type: :controller do
       get :show, {id: my_cheese.id}
       expect(response).to have_http_status(:success)
     end
-  end
 
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
+    it "assigns my_cheese to @cheese" do
+      get :show, {id: my_cheese.id}
+      expect(assigns(:cheese)).to eq(my_cheese)
     end
   end
-
-  describe "GET #edit" do
-    it "returns http success" do
-      get :edit, {id: my_cheese.id}
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end
