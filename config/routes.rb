@@ -8,13 +8,15 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-  get 'welcome/about'
+  get 'welcome/maps'
 
   root 'welcome#index'
 
   get 'likes/index'
 
   get 'users/show'
+
+  #get 'maps'
 
   resources :cheeses
 
