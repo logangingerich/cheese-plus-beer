@@ -2,28 +2,30 @@
   <h1>Cheese + Beer</h1>
   <p>Explore, discover and catalogue your favorite cheese + beer pairings</p>
 </div>
-<h4 class="text-center">Start with Cheese</h4>
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <%= form_tag(cheeses_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Cheeses", :class => 'form-control centered'%>
-      <div class="form-actions text-center">
-        <%= submit_tag "Search", :class => 'btn btn-success centered', :type => 'submit' %>
-      </div>
-    <% end %>
+<div class='bottom'>
+  <h4 class="text-center">Start with Cheese</h4>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <%= form_tag(cheeses_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Cheeses", :class => 'form-control centered'%>
+        <div class="form-actions text-center">
+          <%= submit_tag "Search", :class => 'btn btn-success centered', :type => 'submit' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
-<br>
-<h4 class="text-center">...Or start with Beer</h4>
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <%= form_tag(beers_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Beers", :class => 'form-control centered'%>
-      <div class="form-actions text-center">
-        <%= submit_tag "Search", :class => 'btn btn-success centered', :type => 'submit' %>
-      </div>
-    <% end %>
+  <br>
+  <h4 class="text-center">...Or start with Beer</h4>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <%= form_tag(beers_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Beers", :class => 'form-control centered'%>
+        <div class="form-actions text-center">
+          <%= submit_tag "Search", :class => 'btn btn-success centered', :type => 'submit' %>
+        </div>
+      <% end %>
+    </div>
   </div>
+  <br>
+  <h4 class="text-center">Or, view the <%= link_to "Cheese", cheeses_path %> or <%= link_to "Beer", beers_path %> indexes</h4>
 </div>
-<br>
-<h4 class="text-center">Or, view the <%= link_to "Cheese", cheeses_path %> or <%= link_to "Beer", beers_path %> indexes</h4>

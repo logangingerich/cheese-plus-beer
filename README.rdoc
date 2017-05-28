@@ -1,28 +1,5 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Cheese + Beer is a simple Ruby on Rails Web Application for searching, pairing and cataloging your favorite cheeses and beers. Users can search beer or cheese styles and find associated pairings. Every user can upvote or downvote pairings that they like or dislike, as well as save their favorite pairings to their personal profile, where they can take notes on said pairing.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Enjoy!
